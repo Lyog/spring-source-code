@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="createBeanByConstructor1" class="cc.liuyong.demo3.UserModel" />
+
+    <bean id="createBeanByConstructor2" class="cc.liuyong.demo3.UserModel">
+        <constructor-arg index="0" value="有参构建" />
+        <constructor-arg index="1" value="30" />
+    </bean>
+
+    <bean id="createBeanByStaticFactoryMethod1" class="cc.liuyong.demo3.UserStaticFactory"
+          factory-method="buildUser1" />
+    <bean id="createBeanByStaticFactoryMethod2" class="cc.liuyong.demo3.UserStaticFactory"
+          factory-method="buildUser2">
+        <constructor-arg index="0" value="有参构建" />
+        <constructor-arg index="1" value="50" />
+    </bean>
+
+    <bean id="userFactory" class="cc.liuyong.demo3.UserFactory" />
+    <bean id="createBeanByFactoryMethod1" factory-bean="userFactory" factory-method="buildUser1" />
+    <bean id="createBeanByFactoryMethod2" factory-bean="userFactory" factory-method="buildUser2">
+        <constructor-arg index="0" value="有参构建" />
+        <constructor-arg index="1" value="60" />
+    </bean>
+
+    <bean id="createByFactoryBean" class="cc.liuyong.demo3.UserFactoryBean" />
+</beans>

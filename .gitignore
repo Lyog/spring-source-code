@@ -1,11 +1,48 @@
+# npm
+node_modules/
+dist/
+yarn*
+.tern-port
+
+# kdiff3 ignore
+*.orig
+
+# maven ignore
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+*.log
+*.store
+*.diff
+*.patch
+*.tmp
+test.sh
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+# package ignore (optional)
+# *.jar
+# *.war
+# *.zip
+# *.tar
+# *.tar.gz
+Test.java
+*.iml
+.idea/
+**/target/
+logs/
+/config
+out/
