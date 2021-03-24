@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="lazyInitBean1" class="cc.liuyong.demo10.LazyInitBean" lazy-init="true"/>
+    <bean id="lazyInitBean2" class="cc.liuyong.demo10.LazyInitBean"/>
+
+    <bean id="lazyInitBean3" class="cc.liuyong.demo10.LazyInitBean" lazy-init="true"/>
+
+    <bean id="actualTimeDependencyLazyBean" class="cc.liuyong.demo10.ActualTimeDependencyLazyBean">
+        <property name="lazyInitBean" ref="lazyInitBean3"/>
+    </bean>
+</beans>
