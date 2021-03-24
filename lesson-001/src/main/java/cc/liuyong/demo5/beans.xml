@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="diByConstructorParamIndex" class="cc.liuyong.demo5.UserModel">
+        <constructor-arg index="0" value="张三"/>
+        <constructor-arg index="1" value="简单的描述"/>
+    </bean>
+
+    <bean id="diByConstructorParamType" class="cc.liuyong.demo5.UserModel">
+        <constructor-arg type="int" value="30"/>
+        <constructor-arg type="java.lang.String" value="李四"/>
+        <constructor-arg type="java.lang.String" value="复杂的描述"/>
+    </bean>
+
+    <bean id="diByConstructorParamName" class="cc.liuyong.demo5.CarModel">
+        <constructor-arg name="name" value="王五"/>
+        <constructor-arg name="desc" value="没有描述"/>
+    </bean>
+
+    <bean id="diBySetter" class="cc.liuyong.demo5.MenuModel">
+        <property name="label" value="Spring系列"/>
+    </bean>
+</beans>
