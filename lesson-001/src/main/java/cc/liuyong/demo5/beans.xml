@@ -23,4 +23,70 @@
     <bean id="diBySetter" class="cc.liuyong.demo5.MenuModel">
         <property name="label" value="Spring系列"/>
     </bean>
+
+    <bean id="user" class="cc.liuyong.demo5.UserModel"/>
+    <bean id="diBeanByConstructor" class="cc.liuyong.demo5.PersonModel">
+        <constructor-arg index="0" ref="user"/>
+        <constructor-arg index="1">
+            <bean class="cc.liuyong.demo5.CarModel">
+                <constructor-arg index="0" value="宾利"/>
+                <constructor-arg index="1" value="999"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <bean id="diBeanBySetter" class="cc.liuyong.demo5.PersonModel">
+        <property name="userModel" ref="user"/>
+        <property name="carModel">
+            <bean class="cc.liuyong.demo5.CarModel">
+                <constructor-arg index="0" value="法拉利"/>
+                <constructor-arg index="1" value="666"/>
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="user1" class="cc.liuyong.demo5.UserModel"/>
+    <bean id="user2" class="cc.liuyong.demo5.UserModel"/>
+
+    <bean id="diOtherType" class="cc.liuyong.demo5.DiOtherTypeModel">
+        <property name="list">
+            <list>
+                <value>Spring</value>
+                <value>SpringBoot</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <ref bean="user1"/>
+                <ref bean="user2"/>
+                <ref bean="user1"/>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="张三" value="20"/>
+                <entry key="李四" value="40"/>
+            </map>
+        </property>
+
+        <property name="array">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </array>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="key1">java高并发</prop>
+                <prop key="key2">java高性能</prop>
+                <prop key="key3">java高可用</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

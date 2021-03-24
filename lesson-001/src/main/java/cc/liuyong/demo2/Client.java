@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Client {
     public static void main(String[] args) {
 
-        String xmlPath = "classpath:/cc/liuyong/demo2/beans.xml";
+        String xmlPath = "classpath:/cc/liuyong/demo2/DiAutowireByName.xml";
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(xmlPath);
 
         for (String beanName: Arrays.asList("user1","user2","user3","user4","user5")){

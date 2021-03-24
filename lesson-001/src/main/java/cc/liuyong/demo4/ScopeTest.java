@@ -11,7 +11,7 @@ public class ScopeTest {
     @Before
     public void before(){
         System.out.println("spring容器准备启动……");
-        String xmlPath = "classpath:/cc/liuyong/demo4/beans.xml";
+        String xmlPath = "classpath:/cc/liuyong/demo4/DiAutowireByName.xml";
         this.context = new ClassPathXmlApplicationContext(xmlPath);
         System.out.println("spring容器启动完毕！");
     }

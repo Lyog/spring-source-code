@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Client {
 
     public static void main(String[] args) {
-        String xmlPath = "classpath:/cc/liuyong/demo3/beans.xml";
+        String xmlPath = "classpath:/cc/liuyong/demo3/DiAutowireByName.xml";
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(xmlPath);
         for (String beanName : context.getBeanDefinitionNames()) {
             System.out.println(beanName + ":" + context.getBean(beanName));

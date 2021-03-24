@@ -10,7 +10,7 @@ public class DiTest {
     @Before
     public void before() {
         System.out.println("spring容器准备启动……");
-        String xmlPath = "classpath:/cc/liuyong/demo5/beans.xml";
+        String xmlPath = "classpath:/cc/liuyong/demo5/DiAutowireByName.xml";
         this.context = new ClassPathXmlApplicationContext(xmlPath);
         System.out.println("spring容器启动完毕！");
     }
@@ -33,5 +33,20 @@ public class DiTest {
     @Test
     public void diBySetter() {
         System.out.println(context.getBean("diBySetter"));
+    }
+
+    @Test
+    public void diBeanBySetter() {
+        System.out.println(context.getBean("diBeanBySetter"));
+    }
+
+    @Test
+    public void diBeanByConstructor() {
+        System.out.println(context.getBean("diBeanByConstructor"));
+    }
+
+    @Test
+    public void diOtherType() {
+        System.out.println(context.getBean("diOtherType"));
     }
 }
